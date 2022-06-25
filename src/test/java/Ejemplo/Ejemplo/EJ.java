@@ -28,13 +28,9 @@ public class EJ {
 	public void busqueda() {
 		driver.findElement(By.name("q")).sendKeys("Power Ranger");
 		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-
 		WebElement element = driver.findElement(By.xpath("/html/body/div[7]/div/div[10]/div[1]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[2]/div[1]/div/video-voyager/div/div/div/a/div/div[1]/div[3]"));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).click().build().perform();
-		
-		//JavascriptExecutor je = (JavascriptExecutor) driver;
-		//je.executeScript("arguments[0].click();", element);
 	}
 	
 	@AfterTest
