@@ -1,5 +1,7 @@
 package Ejemplo.Ejemplo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +17,7 @@ public class EJ1 {
 	String ChromeDrivePath = "..\\ProyectoTeoricoPractico\\Drivers\\chromedriver.exe";
 
 	
+	@BeforeMethod
 	@BeforeSuite
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ChromeDrivePath);

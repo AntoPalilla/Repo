@@ -1,5 +1,8 @@
 package Ejemplo.Ejemplo;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +19,7 @@ public class EJ {
 	String url ="https://www.google.com/";
 	String ChromeDrivePath = "..\\ProyectoTeoricoPractico\\Drivers\\chromedriver.exe";
 
+	@BeforeMethod
 	@BeforeSuite
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ChromeDrivePath);
@@ -33,6 +37,7 @@ public class EJ {
 		actions.moveToElement(element).click().build().perform();
 	}
 	
+	@AfterMethod
 	@AfterTest
 	public void tearDown() throws Exception {
 		driver.quit();
