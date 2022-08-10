@@ -107,7 +107,7 @@
           <version>2.22.1</version>
 	<configuration>
             <suiteXmlFiles>
-                <suiteXmlFile>Repo\testng.xml</suiteXmlFile>
+                <suiteXmlFile>C:\Users\u582197\eclipse-workspace\Repo\src\main\java\testng.xml</suiteXmlFile>
             </suiteXmlFiles>
         </configuration>
         </plugin>
