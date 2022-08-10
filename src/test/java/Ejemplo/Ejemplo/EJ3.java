@@ -1,14 +1,15 @@
 package Ejemplo.Ejemplo;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+
 
 public class EJ3 {
 	
@@ -17,7 +18,7 @@ public class EJ3 {
 	String ChromeDrivePath = "..\\ProyectoTeoricoPractico\\Drivers\\chromedriver.exe";
 
 	
-	@BeforeMethod
+	
 	@BeforeSuite
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ChromeDrivePath);
@@ -42,5 +43,11 @@ public class EJ3 {
     	act.dragAndDrop(From, To).build().perform();		
 		}	
 
-
+	@AfterTest
+	public void tearDown() throws Exception {
+		driver.quit();
+	   
+	  }
+	
+	
 }
