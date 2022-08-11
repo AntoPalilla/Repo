@@ -1,11 +1,12 @@
 package Ejemplo.Ejemplo;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 
@@ -14,14 +15,17 @@ public class EJ1 {
 	
 	WebDriver driver;
 	String url ="https://demo.guru99.com/test/delete_customer.php";
-	String ChromeDrivePath = "..\\ProyectoTeoricoPractico\\Drivers\\chromedriver.exe";
+	String ChromeDrivePath = "..\\Repo\\Drivers\\chromedriver.exe";
 
 	
-	@BeforeMethod
+
 	@BeforeSuite
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ChromeDrivePath);
-		driver = new ChromeDriver();
+	    ChromeOptions options = new ChromeOptions();
+	    options.addArguments("--no-sandbox");
+	    driver = new ChromeDriver(options);
+		//driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		//readFile = new ReadExcelFile();
 		driver.get(url);
@@ -45,5 +49,11 @@ public class EJ1 {
 		  driver.close();	
 	
 	}
+	
+	@AfterTest
+	public void tearDown() throws Exception {
+		driver.quit();
+	   
+	  }
 	
 }

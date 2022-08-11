@@ -3,9 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Ejemplo.Ejemplo.EJ3"/>
       <class name="Ejemplo.Ejemplo.EJ"/>
-      <class name="Ejemplo.Ejemplo.EJ2"/>
       <class name="Ejemplo.Ejemplo.EJ1"/>
     </classes>
   </test> <!-- Test -->
